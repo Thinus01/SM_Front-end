@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { ArrowLeft, Bell, LayoutGrid, Menu, Mic, Search, ShoppingCart, Upload, User } from "lucide-react"
 import logo  from '../assets/OIG1.png';
-// import logo  from '../assets/react.svg';
 import { Button } from "../components/Button";
 
 export function PageHeader () {
@@ -29,16 +28,10 @@ export function PageHeader () {
             <Search />
           </Button>
         </div>
-        <Button type="button" size="icon" className="flex-shrink-0">
-          <Mic />
-        </Button>
       </form>
       <div className={`flex-shrink-0 md:gap-2 ${showFullWidthSearch ? "hidden" : "flex"}`}>
         <Button onClick={() => setShowFullWidthSearch(true)} size="icon" variant="ghost" className="md:hidden">
           <Search />
-        </Button>
-        <Button size="icon" variant="ghost" className="md:hidden">
-          <Mic />
         </Button>
         <Button size="icon" variant="ghost">
           <User />

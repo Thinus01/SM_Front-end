@@ -14,6 +14,7 @@ export default {
           border: colors.purple[400],
           text: colors.purple[500],
           dark: colors.purple[800],
+          ultraDark: colors.purple[900],
           ["dark-hover"]: colors.purple[900]
         }
       }
