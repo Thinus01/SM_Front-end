@@ -24,6 +24,8 @@ export const buttonStyles = cva(["transition-colors"] ,{
         "justify-center",
         "p-2.5"
       ],
+      selectSideBar: [ "rounded-l-xl", "py-4" ],
+      unSelectSideBar: [ "rounded", "p-4", "mr-3" ],
     },
   },
   defaultVariants: {

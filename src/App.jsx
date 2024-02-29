@@ -1,26 +1,22 @@
 import './index.css'
 import { PageHeader } from './layouts/PageHeader';
-import { CategoryPills } from './components/CategoryPills';
 import { categories, snacks } from './data/home';
 import { useState } from 'react';
 import { SnackGridItem } from './components/SnackGridItem';
-import { Sidebar } from './layouts/Sidebar';
+import { SmallSidebarItem } from './layouts/Sidebar';
 
 function App() {
   const [selectedCategory,setSelectedCategory] = useState(categories[0]);
   return (
-    <div className='max-h-screen flex flex-col backdrop-blur bg-secondary-ultraDark/30'>
+    <div className='max-h-screen flex flex-col bg-secondary'>
       <PageHeader />
       <div className='grid grid-cols-[auto,1fr] overflow-auto'>
-        <Sidebar />
+        <SmallSidebarItem categories={categories} selectedCategory={selectedCategory} onSelect={setSelectedCategory} />
         <div className='overflow-x-hidden px-8 pb-4'>
-          <div className='sticky top-0 z-10 pb-4'>
-            <CategoryPills categories={categories} selectedCategory={selectedCategory} onSelect={setSelectedCategory}/>
-          </div>
           <div className='grid gap-4 grid-cols-[repeat(auto-fill,minmax(300px,1fr))]'>
             {snacks.map(snack => (
 
-              <SnackGridItem key={snack.id} {...snack}/>
+              <SnackGridItem key={snack.id} selectedCategory={selectedCategory} {...snack}/>
               ))
             }
           </div>
